@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.7",
     author='Ben Travaglione',
     author_email='ben@travaglione.com',
-    url='https://github.com/b-trav/PyBnK',
+    url='https://github.com/uwasystemhealth/PyBnK',
     description=("This Python package allows interaction with a stand-alone"
                  "Brüel & Kjær Type 3050-B-6 data acquisition system."),
     long_description=long_description,

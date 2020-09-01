@@ -11,7 +11,7 @@ The various specifications for the BnK are contained in the [Brüel & Kjær Type
 
 ## Installation
 
-* Clone [PyBnK](https://github.com/b-trav/PyBnK)
+* Clone [PyBnK](https://github.com/uwasystemhealth/PyBnK)
 * cd into the PyBnK directory
 * Install the package:
 
@@ -60,7 +60,7 @@ pip uninstall PyBnk -y
 
 ## Contributing
 
-Bugs can be reported at [PyBnK](https://github.com/b-trav/PyBnK). 
+Bugs can be reported at [PyBnK](https://github.com/uwasystemhealth/PyBnK). 
 
 ## License
 
