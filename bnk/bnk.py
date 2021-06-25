@@ -155,13 +155,15 @@ def WavHeader(wav_file, verbose=False):
 
     return header
 
-def OpenWav(wav_file,verbose=False):
+def OpenWav(wav_file,verbose=False,start=0,stop=None):
     """This function opens a BnK created WAV file.
     
     Parameters:
         wav_file (str): The WAV file to be opened
         verbose (bool): A flag to print more information about the
                         WAV file (default is False).
+        start (int) :   Index of the first value to retrieve
+        stop (int) :    Index of the last value to retrieve
         
     Returns:
         wav_data (ndarray): Containing scaled times series data for
@@ -174,7 +176,8 @@ def OpenWav(wav_file,verbose=False):
     
     header = WavHeader(wav_file, verbose)
 
-    wav_data, sr = soundfile.read(wav_file, always_2d=True)
+    wav_data, sr = soundfile.read(wav_file, always_2d=True, 
+                                  start=start,stop=stop)
     
     for x in range(header['NumChannels']):
         # The scale factor already incorporates the sensitivity
@@ -188,7 +191,7 @@ def OpenWav(wav_file,verbose=False):
         json_data = None
     
     if verbose:
-        print("{} contains {} channels, with {} samples per channel.".format(
+        print("{} contains {} channels, extracting {} samples per channel.".format(
             wav_file, wav_data.shape[1], wav_data.shape[0]))
         print()
         print(json_data)
